@@ -76,8 +76,8 @@ public class ClientService {
 	 * @param document
 	 * @return
 	 */
-	public Client findByDocument(String document) {
-		return this.clientRepository.findByDocument(document);
+	public Client findByIdentification(String document) {
+		return this.clientRepository.findByIdentification(document);
 	}
 
 	/**

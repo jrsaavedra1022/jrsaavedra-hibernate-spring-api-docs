@@ -23,7 +23,7 @@ public interface ClientRepository extends JpaRepository<Client, String>{
 	 */
 	public List<Client> findByLastName(String lastName);
 	
-	public Client findByDocument(String document);
+	public Client findByIdentification(String document);
 
 	
 }

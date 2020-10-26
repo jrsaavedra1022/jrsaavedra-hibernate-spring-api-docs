@@ -59,7 +59,7 @@ public class ClientResource {
 	@ApiResponses(value = { @ApiResponse(code = 201, message = "Cliente actualizado correctamente"),
 			@ApiResponse(code = 404, message = "Cliente no encontrado") })
 	public ResponseEntity<Client> updateClient(@PathVariable("document") String document, ClientVO clientVo) {
-		Client client = this.clientService.findByDocument(document);
+		Client client = this.clientService.findByIdentification(document);
 		if (client == null) {
 			return new ResponseEntity<Client>(HttpStatus.NOT_FOUND);
 		} else {
@@ -78,7 +78,7 @@ public class ClientResource {
 	@ApiResponses(value = { @ApiResponse(code = 201, message = "Cliente eliminado correctamente"),
 			@ApiResponse(code = 404, message = "Cliente no encontrado") })
 	public void removeClient(@PathVariable("document") String document) {
-		Client client = this.clientService.findByDocument(document);
+		Client client = this.clientService.findByIdentification(document);
 		if (client != null) {
 			this.clientService.delete(client);
 		}
